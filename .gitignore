@@ -1,0 +1,27 @@
+# Ignore build results
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore Visual Studio Code workspace settings
+.vscode/
+
+# Ignore NuGet packages
+*.nupkg
+packages/
+*.snupkg
+
+# Ignore test results
+TestResults/
+
+# Ignore temporary files
+*.tmp
+*.log
+
+# Vs files
+*.vs/

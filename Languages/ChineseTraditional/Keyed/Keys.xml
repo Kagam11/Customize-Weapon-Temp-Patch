@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <CustomizeWeaponTempPatch>臨時定製武器補丁</CustomizeWeaponTempPatch>
+
+    <Wolfein>沃芬族</Wolfein>
+    <Miho>美狐族</Miho>
+    <Kiiro>綺羅族</Kiiro>
+    <Milira>米莉拉</Milira>
+    <Cinder>煙燼族</Cinder>
+    <Ratkin>鼠族</Ratkin>
+    <RatkinWeaponPlus>鼠族武器擴展</RatkinWeaponPlus>
+    <RatkinOberoniaAurea>鼠族派系擴展：金鳶尾蘭</RatkinOberoniaAurea>
+    <Moyo>茉約族</Moyo>
+    <MoyoCartel>茉約族 - 深海罪企聯盟</MoyoCartel>
+    <MoyoAbyss>紅茉約族</MoyoAbyss>
+    <Moyo2>茉約族2.0</Moyo2>
+
+</LanguageData>

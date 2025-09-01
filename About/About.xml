@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Customize Weapon Temp Patch</name>
+	<author>Kagami</author>
+	<packageId>Kagami.CustomizeWeaponTempPatch</packageId>
+    <modVersion>1.0.0.0</modVersion>
+	<supportedVersions>
+        <li>1.6</li>
+	</supportedVersions>
+    <modDependencies>
+        <li>
+            <packageId>vortex.customizeweapon</packageId>
+        </li>
+    </modDependencies>
+	<description>为一些种族添加了临时的定制武器补丁
+    </description>
+    
+	<loadAfter>
+		<li>vortex.customizeweapon</li>
+        <li>vortex.customizeweapon</li>
+        <li>melondove.wolfeinrace</li>
+        <li>miho.fortifiedoutremer</li>
+        <li>ancot.kiirorace</li>
+        <li>ancot.milirarace</li>
+        <li>breadmo.cinders</li>
+        <li>fxz.solaris.ratkinracemod.odyssey</li>
+        <li>bbb.ratkinweapon.morefailure</li>
+        <li>oark.ratkinfaction.oberoniaaurea</li>
+        <li>nemonian.my</li>
+        <li>nemonian.mycartel</li>
+        <li>aoba.redmoyo</li>
+        <li>nemonian.my2.beta</li>
+	</loadAfter>
+</ModMetaData>
