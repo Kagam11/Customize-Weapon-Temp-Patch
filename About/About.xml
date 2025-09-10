@@ -3,7 +3,7 @@
 	<name>Customize Weapon Temp Patch</name>
 	<author>Kagami</author>
 	<packageId>Kagami.CustomizeWeaponTempPatch</packageId>
-    <modVersion>1.0.0.0</modVersion>
+    <modVersion>1.0.3.1</modVersion>
 	<supportedVersions>
         <li>1.6</li>
 	</supportedVersions>
@@ -30,5 +30,15 @@
         <li>nemonian.mycartel</li>
         <li>aoba.redmoyo</li>
         <li>nemonian.my2.beta</li>
+        <li>kalospacer.ahndemi.panieltheautomata</li>
+        <li>roo.antyracemod</li>
+        <li>waffelf.moosesianrace</li>
+        <li>hssn.falloutweapons</li>
+        <li>legendaryminuteman.frwp</li>
+        <li>seioch.kurin.har</li>
+        <li>eoralmilk.kurinmeowedition</li>
+        
+        <li>grimworld.core</li>
+        <li>ayameduki.ayaracepremise</li>
 	</loadAfter>
 </ModMetaData>
