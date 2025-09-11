@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Linq;
 using UnityEngine;
 using Verse;
@@ -26,7 +27,9 @@ namespace Customize_Weapon_Temp_Patch
 
             var list = new Listing_Standard();
             list.Begin(viewRect);
-            foreach (var race in Enum.GetValues(typeof(ModRaces)).Cast<ModRaces>())
+            var races = Enum.GetValues(typeof(ModRace)).Cast<ModRace>().ToList();
+            races.SortBy(r => r.ToString().Translate().ToStringSafe());
+            foreach (var race in races)
             {
                 list.CheckboxLabeled(race.ToString().Translate(), ref settings.Races[(int)race]);
                 list.GapLine(5);
@@ -43,11 +46,11 @@ namespace Customize_Weapon_Temp_Patch
     public class CwtpSettings : ModSettings
     {
         private const bool defaultValue = false;
-        public bool[] Races = Enumerable.Repeat(defaultValue, Enum.GetNames(typeof(ModRaces)).Length).ToArray();
+        public bool[] Races = Enumerable.Repeat(defaultValue, Enum.GetNames(typeof(ModRace)).Length).ToArray();
 
         public override void ExposeData()
         {
-            foreach (var race in Enum.GetValues(typeof(ModRaces)).Cast<ModRaces>())
+            foreach (var race in Enum.GetValues(typeof(ModRace)).Cast<ModRace>())
             {
                 Scribe_Values.Look(ref Races[(int)race], nameof(race), defaultValue);
             }

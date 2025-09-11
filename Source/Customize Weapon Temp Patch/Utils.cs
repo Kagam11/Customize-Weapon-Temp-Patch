@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 
 namespace Customize_Weapon_Temp_Patch
 {
     public static class Utils
     {
-        public enum ModRaces
+        /// <summary>
+        /// 兼容的mod
+        /// </summary>
+        public enum ModRace
         {
             Wolfein,
             Miho,
@@ -32,68 +33,112 @@ namespace Customize_Weapon_Temp_Patch
             FalloutRetro,
             KurinHar,
             KurinMeow,
+            Rh2Mgs,
+            Rh2Msf,
+            MoeLotl,
+            HaloInfinite,
+
             //Yuran,
         };
-        public static Dictionary<ModRaces, string> ModPackageIds = new Dictionary<ModRaces, string>
+
+        /// <summary>
+        /// 单个mod对应的包名
+        /// </summary>
+        public static readonly Dictionary<ModRace, List<string>> ModPackageIds = new Dictionary<ModRace, List<string>>
         {
-            { ModRaces.Wolfein, "melondove.wolfeinrace" },
-            { ModRaces.Miho, "miho.fortifiedoutremer" },
-            { ModRaces.Kiiro, "ancot.kiirorace" },
-            { ModRaces.Milira, "ancot.milirarace" },
-            { ModRaces.Cinder, "breadmo.cinders" },
-            { ModRaces.Ratkin, "fxz.solaris.ratkinracemod.odyssey" },
-            { ModRaces.RatkinWeaponPlus, "bbb.ratkinweapon.morefailure" },
-            { ModRaces.RatkinOberoniaAurea, "oark.ratkinfaction.oberoniaaurea" },
-            { ModRaces.Moyo, "nemonian.my" },
-            { ModRaces.MoyoCartel, "nemonian.mycartel" },
-            { ModRaces.MoyoAbyss, "aoba.redmoyo" },
-            { ModRaces.Moyo2, "nemonian.my2.beta" },
-            { ModRaces.Paniel, "kalospacer.ahndemi.panieltheautomata" },
-            { ModRaces.Anty, "roo.antyracemod" },
-            { ModRaces.Moosesian, "waffelf.moosesianrace" },
-            { ModRaces.FalloutHssn, "hssn.falloutweapons" },
-            { ModRaces.FalloutRetro, "legendaryminuteman.frwp"},
-            { ModRaces.KurinHar, "seioch.kurin.har" },
-            { ModRaces.KurinMeow, "eoralmilk.kurinmeowedition" },
-            //{ ModRaces.Yuran, "rooandgloomy.yuranracemod" },
+            { ModRace.Wolfein,              new List<string>{ "melondove.wolfeinrace" } } ,
+            { ModRace.Miho,                 new List<string>{ "miho.fortifiedoutremer"} },
+            { ModRace.Kiiro,                new List<string>{ "ancot.kiirorace" } },
+            { ModRace.Milira,               new List<string>{ "ancot.milirarace" }},
+            { ModRace.Cinder,               new List<string>{ "breadmo.cinders" } },
+            { ModRace.Ratkin,               new List<string>{ "fxz.solaris.ratkinracemod.odyssey" } },
+            { ModRace.RatkinWeaponPlus,     new List<string>{ "bbb.ratkinweapon.morefailure" } },
+            { ModRace.RatkinOberoniaAurea,  new List<string>{ "oark.ratkinfaction.oberoniaaurea" } },
+            { ModRace.Moyo,                 new List<string>{ "nemonian.my" } },
+            { ModRace.MoyoCartel,           new List<string>{ "nemonian.mycartel" } },
+            { ModRace.MoyoAbyss,            new List<string>{ "aoba.redmoyo" } },
+            { ModRace.Moyo2,                new List<string>{ "nemonian.my2.beta" } },
+            { ModRace.Paniel,               new List<string>{ "kalospacer.ahndemi.panieltheautomata" } },
+            { ModRace.Anty,                 new List<string>{ "roo.antyracemod" } },
+            { ModRace.Moosesian,            new List<string>{ "waffelf.moosesianrace" } },
+            { ModRace.FalloutHssn,          new List<string>{ "hssn.falloutweapons" } },
+            { ModRace.FalloutRetro,         new List<string>{ "legendaryminuteman.frwp" } },
+            { ModRace.KurinHar,             new List<string>{ "seioch.kurin.har" } },
+            { ModRace.KurinMeow,            new List<string>{ "eoralmilk.kurinmeowedition" } },
+            { ModRace.Rh2Mgs,               new List<string>{ "rh2.metal.gear.solid" } },
+            { ModRace.Rh2Msf,               new List<string>{ "rh2.faction.militaires.sans.frontieres" } },
+            { ModRace.MoeLotl,              new List<string>{ "hentailoliteam.axolotl" } },
+            { ModRace.HaloInfinite,         new List<string>{ "rollob312.hinfunsc" } },
+
+
+
+            // 下方是虽然属于mod系列，但包名不以统一前缀开头的，通过包名全名指定。
+            { ModRace.Grimworld,            new List<string>{ "happypurging.ageofdarkness", "cvn.bloodpact" } },
         };
-        public static Dictionary<ModRaces, string> ModPackageIdsRange = new Dictionary<ModRaces, string>
+
+        /// <summary>
+        /// 通常系列mod以统一的包名开头
+        /// </summary>
+        public static readonly Dictionary<ModRace, string> ModPackageIdsRange = new Dictionary<ModRace, string>
         {
-            { ModRaces.Aya, "ayameduki" },
-            { ModRaces.Grimworld, "grimworld" },
+            { ModRace.Aya, "ayameduki" },
+            { ModRace.Grimworld, "grimworld" },
         };
-        public static Dictionary<string, List<ThingDef>> GetThingDefsFromMods()
+
+        public static Dictionary<ModRace, List<ThingDef>> GetThingDefsFromMods()
         {
             var defs = DefDatabase<ThingDef>.AllDefs;
-            var raceIdSet = new HashSet<string>(ModPackageIds.Values.Select(x => x.ToLower()));
-            var remainingDefs = new List<ThingDef>();
+            var allModIds = ModPackageIds.Values.SelectMany(x => x).ToHashSet();
+            var modRangeIds = ModPackageIdsRange.Values.ToHashSet();
+            defs = defs.Where(x => x.IsWeapon && !x.IsMeleeWeapon);
 
-            var groupsDict = raceIdSet.ToDictionary(k => k, k => new List<ThingDef>());
-            foreach (var def in defs)
+            var defs1 = defs.Where(x => allModIds.Contains(x?.modContentPack?.PackageId));
+            var defs2 = defs.Where(x => modRangeIds.Contains(x?.modContentPack?.PackageId));
+            var returnDict = Enum.GetValues(typeof(ModRace)).Cast<ModRace>().ToDictionary(k => k, _ => new List<ThingDef>());
+            foreach (var def in defs1)
             {
-                if (raceIdSet.Contains(def?.modContentPack?.PackageId.ToLower()))
+                foreach (var key in ModPackageIds.Keys)
                 {
-                    groupsDict[def.modContentPack.PackageId.ToLower()].Add(def);
-                }
-                else
-                {
-                    remainingDefs.Add(def);
-                }
-            }
-
-            var rangeDict = ModPackageIdsRange.ToDictionary(k => k.Value.ToLower(), k => new List<ThingDef>());
-            foreach (var def in remainingDefs)
-            {
-                foreach (var key in rangeDict.Keys)
-                {
-                    if (def?.modContentPack?.PackageId.ToLower().StartsWith($"{key}.") ?? false)
+                    if (ModPackageIds[key].Contains(def?.modContentPack?.PackageId))
                     {
-                        rangeDict[key].Add(def);
-                        break;
+                        returnDict.TryAdd(key, new List<ThingDef>());
+                        returnDict[key].Add(def);
                     }
                 }
             }
-            return groupsDict.Concat(rangeDict).ToDictionary(x => x.Key, x => x.Value);
+            foreach (var def in defs2)
+            {
+                foreach (var key in ModPackageIdsRange.Keys)
+                {
+                    if (def?.modContentPack?.PackageId.StartsWith($"{ModPackageIdsRange[key]}.") ?? false)
+                    {
+                        returnDict.TryAdd(key, new List<ThingDef>());
+                        returnDict[key].Add(def);
+                    }
+                }
+            }
+            return returnDict;
+        }
+
+        public static Dictionary<TKey, List<TValue>> MergeLists<TKey, TValue>(this IDictionary<TKey, List<TValue>> first, IDictionary<TKey, List<TValue>> second)
+        {
+            var result = new Dictionary<TKey, List<TValue>>(first);
+
+            foreach (var kvp in second)
+            {
+                if (result.TryGetValue(kvp.Key, out var existingList))
+                {
+                    // 合并列表（这里不去重）
+                    existingList.AddRange(kvp.Value);
+                }
+                else
+                {
+                    // 直接添加新键
+                    result[kvp.Key] = new List<TValue>(kvp.Value);
+                }
+            }
+
+            return result;
         }
     }
 }

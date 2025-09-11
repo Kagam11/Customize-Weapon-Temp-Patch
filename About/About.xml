@@ -3,7 +3,7 @@
 	<name>Customize Weapon Temp Patch</name>
 	<author>Kagami</author>
 	<packageId>Kagami.CustomizeWeaponTempPatch</packageId>
-    <modVersion>1.0.3.1</modVersion>
+    <modVersion>1.1.0.1</modVersion>
 	<supportedVersions>
         <li>1.6</li>
 	</supportedVersions>
@@ -37,7 +37,11 @@
         <li>legendaryminuteman.frwp</li>
         <li>seioch.kurin.har</li>
         <li>eoralmilk.kurinmeowedition</li>
-        
+        <li>rh2.faction.militaires.sans.frontieres</li>
+        <li>rh2.metal.gear.solid</li>
+        <li>hentailoliteam.axolotl</li>
+        <li>rollob312.hinfunsc</li>
+
         <li>grimworld.core</li>
         <li>ayameduki.ayaracepremise</li>
 	</loadAfter>
