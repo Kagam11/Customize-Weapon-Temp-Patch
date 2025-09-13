@@ -37,7 +37,8 @@ namespace Customize_Weapon_Temp_Patch
             Rh2Msf,
             MoeLotl,
             HaloInfinite,
-
+            CeleTech,
+            CinderEWE,
             //Yuran,
         };
 
@@ -69,7 +70,8 @@ namespace Customize_Weapon_Temp_Patch
             { ModRace.Rh2Msf,               new List<string>{ "rh2.faction.militaires.sans.frontieres" } },
             { ModRace.MoeLotl,              new List<string>{ "hentailoliteam.axolotl" } },
             { ModRace.HaloInfinite,         new List<string>{ "rollob312.hinfunsc" } },
-
+            { ModRace.CeleTech,             new List<string>{ "tot.celetech.mkiii" } },
+            { ModRace.CinderEWE,            new List<string>{ "asiimoves.cinderserodedweaponsaextended" } },
 
 
             // 下方是虽然属于mod系列，但包名不以统一前缀开头的，通过包名全名指定。

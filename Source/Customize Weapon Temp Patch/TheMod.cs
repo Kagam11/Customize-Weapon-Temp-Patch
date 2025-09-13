@@ -50,6 +50,8 @@ namespace Customize_Weapon_Temp_Patch
             ProcessRace(ModRace.MoeLotl, "Axolotl_LotiQiRangedWeapon");
             ProcessRace(ModRace.MoeLotl, "Axolotl_RangedWeapon");
             ProcessRace(ModRace.HaloInfinite);
+            ProcessRace(ModRace.CeleTech, "TOT_Weapons_Cat");
+            ProcessRace(ModRace.CinderEWE);
             //ProcessRace(ModRaces.Yuran, "YRWeapons");
 
             ProcessRace(ModRace.Aya);
