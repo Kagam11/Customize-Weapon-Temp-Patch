@@ -3,7 +3,7 @@
 	<name>Customize Weapon Temp Patch</name>
 	<author>Kagami</author>
 	<packageId>Kagami.CustomizeWeaponTempPatch</packageId>
-    <modVersion>1.1.1.0</modVersion>
+    <modVersion>1.2.0.0</modVersion>
 	<supportedVersions>
         <li>1.6</li>
 	</supportedVersions>
@@ -43,8 +43,14 @@
         <li>rollob312.hinfunsc</li>
         <li>tot.celetech.mkiii</li>
         <li>asiimoves.cinderserodedweaponsaextended</li>
+        <li>darkkai.ratkinrangedweaponexpandednew</li>
+        <li>browncofe.rcg</li>
+        <li>milkwater.destinymod</li>
+        <li>d2.exotic.weapons</li>
 
         <li>grimworld.core</li>
         <li>ayameduki.ayaracepremise</li>
+
+        <li>feliperathal.customizeweaponexpanded</li>
 	</loadAfter>
 </ModMetaData>

@@ -13,8 +13,6 @@ namespace Customize_Weapon_Temp_Patch
         static readonly CwtpSettings settings;
         private static Dictionary<ModRace, List<ThingDef>> raceDefs;
         private static CompProperties_DynamicTraits parts = new CompProperties_DynamicTraits();
-        private static List<string> weaponTags = new List<string> { "CWF_AssaultRifle", "CWF_BoltActionRifle", "CWF_BurstFire", "CWF_Charge", "CWF_ChargeLance", "CWF_Handgun", "CWF_LMG", "CWF_Minigun", "CWF_Shotgun", "CWF_SMG", "CWF_SniperRifle" };
-
         private const string defaultCategory = "WeaponsRanged";
 
         static CwtpStartUp()
@@ -52,6 +50,10 @@ namespace Customize_Weapon_Temp_Patch
             ProcessRace(ModRace.HaloInfinite);
             ProcessRace(ModRace.CeleTech, "TOT_Weapons_Cat");
             ProcessRace(ModRace.CinderEWE);
+            ProcessRace(ModRace.RatkinRwen);
+            ProcessRace(ModRace.RatkinGW);
+            ProcessRace(ModRace.Destiny);
+            ProcessRace(ModRace.Destiny2);
             //ProcessRace(ModRaces.Yuran, "YRWeapons");
 
             ProcessRace(ModRace.Aya);
@@ -72,15 +74,21 @@ namespace Customize_Weapon_Temp_Patch
 
         private static void AddParts(List<ThingDef> defs, string category)
         {
+            var tags = GetAllWeaponTags();
             foreach (var def in defs)
             {
                 // 只处理对应的武器类
                 if (!(def?.thingCategories?.Any(x => x?.defName == category) ?? false)) continue;
                 // 检测是否已有组件
-                if (def?.comps?.Any(x => x is CompProperties_DynamicTraits) ?? false) continue;
+                if (settings.OverwriteMode)
+                {
+                    def?.comps?.RemoveAll(x => x is CompProperties_DynamicTraits);
+                    def?.weaponTags?.RemoveAll(x => tags.Contains(x));
+                }
+                else if (def?.comps?.Any(x => x is CompProperties_DynamicTraits) ?? false) continue;
 
                 def?.comps?.Add(parts);
-                def?.weaponTags?.AddRange(weaponTags);
+                def?.weaponTags?.AddRange(tags);
             }
         }
     }

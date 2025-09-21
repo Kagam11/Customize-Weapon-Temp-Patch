@@ -1,33 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-    <CustomizeWeaponTempPatch>临时定制武器补丁</CustomizeWeaponTempPatch>
+    <CustomizeWeaponTempPatch>Customize Weapon Temp Patch</CustomizeWeaponTempPatch>
 
-    <Wolfein>Wolfein Race</Wolfein>
-    <Miho>Miho, the celestial fox</Miho>
-    <Kiiro>Kiiro Race</Kiiro>
-    <Milira>Milira Race</Milira>
-    <Cinder>Cinders of the Embergarden</Cinder>
-    <Ratkin>NewRatkinPlus</Ratkin>
-    <RatkinWeaponPlus>Ratkin Weapon +</RatkinWeaponPlus>
-    <RatkinOberoniaAurea>Ratkin Faction: Oberonia Aurea</RatkinOberoniaAurea>
-    <Moyo>Moyo - from the depth</Moyo>
-    <MoyoCartel>Moyo - The cartel arrives</MoyoCartel>
-    <MoyoAbyss>Moyo - Light in the Abyss</MoyoAbyss>
-    <Moyo2>Moyo2.0 - Blood stained business</Moyo2>
-    <Paniel>Paniel the Automata</Paniel>
-    <Anty>Anty the war ant race</Anty>
-    <Moosesian>Moosesian race</Moosesian>
-    <FalloutHssn>[hssn] FALLOUT - Weapons</FalloutHssn>
-    <FalloutRetro>Fallout: Retro Weapon Pack</FalloutRetro>
-    <KurinHar>Kurin HAR Edition</KurinHar>
-    <KurinMeow>Kurin Meow Edition</KurinMeow>
-    <Rh2Mgs>[rh2] Metal Gear Solid</Rh2Mgs>
-    <Rh2Msf>[rh2] Militaires Sans Frontieres</Rh2Msf>
-    <MoeLotl>MoeLotl race</MoeLotl>
-    <HaloInfinite>Halo Infinite</HaloInfinite>
-    <CeleTech>CeleTech Arsenal MKIII</CeleTech>
-    <CinderEWE>Cinders_ErodedWeaponsaExtended</CinderEWE>
+    <CwtpSettingsDesc>Overall Settings</CwtpSettingsDesc>
+    <CwtpOverwriteModeLabel>Overwrite Mode</CwtpOverwriteModeLabel>
 
-    <Aya>Aya series</Aya>
-    <Grimworld>Grimworld series</Grimworld>
+    <CwtpExtensionSettingsLabel>Extensions</CwtpExtensionSettingsLabel>
+    <CwtpCwExpanded>Custom Weapons Expanded</CwtpCwExpanded>
+
+    <CwtpRaceSettingsLabel>Races</CwtpRaceSettingsLabel>
+    <CwtpWolfein>Wolfein Race</CwtpWolfein>
+    <CwtpMiho>Miho, the celestial fox</CwtpMiho>
+    <CwtpKiiro>Kiiro Race</CwtpKiiro>
+    <CwtpMilira>Milira Race</CwtpMilira>
+    <CwtpCinder>Cinders of the Embergarden</CwtpCinder>
+    <CwtpRatkin>NewRatkinPlus</CwtpRatkin>
+    <CwtpRatkinWeaponPlus>Ratkin Weapon +</CwtpRatkinWeaponPlus>
+    <CwtpRatkinOberoniaAurea>Ratkin Faction: Oberonia Aurea</CwtpRatkinOberoniaAurea>
+    <CwtpMoyo>Moyo - from the depth</CwtpMoyo>
+    <CwtpMoyoCartel>Moyo - The cartel arrives</CwtpMoyoCartel>
+    <CwtpMoyoAbyss>Moyo - Light in the Abyss</CwtpMoyoAbyss>
+    <CwtpMoyo2>Moyo2.0 - Blood stained business</CwtpMoyo2>
+    <CwtpPaniel>Paniel the Automata</CwtpPaniel>
+    <CwtpAnty>Anty the war ant race</CwtpAnty>
+    <CwtpMoosesian>Moosesian race</CwtpMoosesian>
+    <CwtpFalloutHssn>[hssn] FALLOUT - Weapons</CwtpFalloutHssn>
+    <CwtpFalloutRetro>Fallout: Retro Weapon Pack</CwtpFalloutRetro>
+    <CwtpKurinHar>Kurin HAR Edition</CwtpKurinHar>
+    <CwtpKurinMeow>Kurin Meow Edition</CwtpKurinMeow>
+    <CwtpRh2Mgs>[rh2] Metal Gear Solid</CwtpRh2Mgs>
+    <CwtpRh2Msf>[rh2] Militaires Sans Frontieres</CwtpRh2Msf>
+    <CwtpMoeLotl>MoeLotl race</CwtpMoeLotl>
+    <CwtpHaloInfinite>Halo Infinite</CwtpHaloInfinite>
+    <CwtpCeleTech>CeleTech Arsenal MKIII</CwtpCeleTech>
+    <CwtpCinderEWE>Cinders_ErodedWeaponsaExtended</CwtpCinderEWE>
+    <CwtpRatkinRwen>Ratkin Ranged Weapon Expanded New</CwtpRatkinRwen>
+    <CwtpRatkinGW>Ratkin Clothes - GreatWar</CwtpRatkinGW>
+    <CwtpDestiny>Destiny Exotic Weapons</CwtpDestiny>
+    <CwtpDestiny2>Destiny 2 Exotic Weapons</CwtpDestiny2>
+
+    <CwtpAya>Aya series</CwtpAya>
+    <CwtpGrimworld>Grimworld series</CwtpGrimworld>
+
 </LanguageData>

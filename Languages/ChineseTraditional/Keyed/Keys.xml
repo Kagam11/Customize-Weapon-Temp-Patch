@@ -2,32 +2,44 @@
 <LanguageData>
     <CustomizeWeaponTempPatch>臨時定製武器補丁</CustomizeWeaponTempPatch>
 
-    <Wolfein>沃芬族</Wolfein>
-    <Miho>美狐族</Miho>
-    <Kiiro>綺羅族</Kiiro>
-    <Milira>米莉拉</Milira>
-    <Cinder>煙燼族</Cinder>
-    <Ratkin>鼠族</Ratkin>
-    <RatkinWeaponPlus>鼠族武器擴展</RatkinWeaponPlus>
-    <RatkinOberoniaAurea>鼠族派系擴展：金鳶尾蘭</RatkinOberoniaAurea>
-    <Moyo>茉約族</Moyo>
-    <MoyoCartel>茉約族 - 深海罪企聯盟</MoyoCartel>
-    <MoyoAbyss>紅茉約族</MoyoAbyss>
-    <Moyo2>茉約族2.0</Moyo2>
-    <Paniel>帕妮艾</Paniel>
-    <Anty>蟻族</Anty>
-    <Moosesian>駝鹿族</Moosesian>
-    <FalloutHssn>HSSN輻射武器包</FalloutHssn>
-    <FalloutRetro>輻射覆古武器包</FalloutRetro>
-    <KurinHar>魅狐HAR版</KurinHar>
-    <KurinMeow>魅狐喵喵版</KurinMeow>
-    <Rh2Mgs>[rh2] 潛龍諜影</Rh2Mgs>
-    <Rh2Msf>[rh2] 無國界之師</Rh2Msf>
-    <MoeLotl>萌螈族</MoeLotl>
-    <HaloInfinite>光環無限</HaloInfinite>
-    <CeleTech>天工鑄造</CeleTech>
-    <CinderEWE>煙燼武器拓展</CinderEWE>
+    <CwtpSettingsDesc>綜合設置</CwtpSettingsDesc>
+    <CwtpOverwriteModeLabel>覆蓋模式</CwtpOverwriteModeLabel>
 
-    <Aya>人工種族系列</Aya>
-    <Grimworld>Grimworld系列</Grimworld>
+    <CwtpExtensionSettingsLabel>擴展開關</CwtpExtensionSettingsLabel>
+    <CwtpCwExpanded>Custom Weapons Expanded</CwtpCwExpanded>
+
+    <CwtpRaceSettingsLabel>種族開關</CwtpRaceSettingsLabel>
+    <CwtpWolfein>沃芬族</CwtpWolfein>
+    <CwtpMiho>美狐族</CwtpMiho>
+    <CwtpKiiro>綺羅族</CwtpKiiro>
+    <CwtpMilira>米莉拉</CwtpMilira>
+    <CwtpCinder>煙燼族</CwtpCinder>
+    <CwtpRatkin>鼠族</CwtpRatkin>
+    <CwtpRatkinWeaponPlus>鼠族武器擴展</CwtpRatkinWeaponPlus>
+    <CwtpRatkinOberoniaAurea>鼠族派系擴展：金鳶尾蘭</CwtpRatkinOberoniaAurea>
+    <CwtpMoyo>茉約族</CwtpMoyo>
+    <CwtpMoyoCartel>茉約族 - 深海罪企聯盟</CwtpMoyoCartel>
+    <CwtpMoyoAbyss>紅茉約族</CwtpMoyoAbyss>
+    <CwtpMoyo2>茉約族2.0</CwtpMoyo2>
+    <CwtpPaniel>帕妮艾</CwtpPaniel>
+    <CwtpAnty>蟻族</CwtpAnty>
+    <CwtpMoosesian>駝鹿族</CwtpMoosesian>
+    <CwtpFalloutHssn>HSSN輻射武器包</CwtpFalloutHssn>
+    <CwtpFalloutRetro>輻射覆古武器包</CwtpFalloutRetro>
+    <CwtpKurinHar>魅狐HAR版</CwtpKurinHar>
+    <CwtpKurinMeow>魅狐喵喵版</CwtpKurinMeow>
+    <CwtpRh2Mgs>[rh2] 潛龍諜影</CwtpRh2Mgs>
+    <CwtpRh2Msf>[rh2] 無國界之師</CwtpRh2Msf>
+    <CwtpMoeLotl>萌螈族</CwtpMoeLotl>
+    <CwtpHaloInfinite>光環無限</CwtpHaloInfinite>
+    <CwtpCeleTech>天工鑄造</CwtpCeleTech>
+    <CwtpCinderEWE>煙燼武器拓展</CwtpCinderEWE>
+    <CwtpRatkinRwen>Ratkin Ranged Weapon Expanded New</CwtpRatkinRwen>
+    <CwtpRatkinGW>Ratkin Clothes - GreatWar</CwtpRatkinGW>
+    <CwtpDestiny>Destiny Exotic Weapons</CwtpDestiny>
+    <CwtpDestiny2>Destiny 2 Exotic Weapons</CwtpDestiny2>
+
+    <CwtpAya>人工種族系列</CwtpAya>
+    <CwtpGrimworld>Grimworld系列</CwtpGrimworld>
+
 </LanguageData>
