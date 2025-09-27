@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 using Verse;
+using static Customize_Weapon_Temp_Patch.Races;
 using static Customize_Weapon_Temp_Patch.Utils;
 
 namespace Customize_Weapon_Temp_Patch
@@ -42,7 +43,7 @@ namespace Customize_Weapon_Temp_Patch
                 list.GapLine(5);
             }
             list.Gap(15);
-            var races = Enum.GetValues(typeof(ModRace)).Cast<ModRace>().ToList();
+            var races = GetRaces().ToList();
             races.SortBy(r => r.ToString().Translate().ToString());
             Text.Font = GameFont.Medium;
             list.Label("CwtpRaceSettingsLabel".Translate());
@@ -78,7 +79,7 @@ namespace Customize_Weapon_Temp_Patch
             {
                 Scribe_Values.Look(ref Extensions[(int)ext], ext.ToString(), true);
             }
-            foreach (var race in Enum.GetValues(typeof(ModRace)).Cast<ModRace>())
+            foreach (var race in GetRaces())
             {
                 Scribe_Values.Look(ref Races[(int)race], race.ToString(), true);
             }

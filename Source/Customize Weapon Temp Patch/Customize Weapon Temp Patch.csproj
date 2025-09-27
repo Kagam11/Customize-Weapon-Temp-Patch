@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Races.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="TheMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

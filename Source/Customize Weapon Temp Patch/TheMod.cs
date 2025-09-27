@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
+using static Customize_Weapon_Temp_Patch.Races;
 using static Customize_Weapon_Temp_Patch.Utils;
 
 namespace Customize_Weapon_Temp_Patch
@@ -11,8 +12,8 @@ namespace Customize_Weapon_Temp_Patch
     internal static class CwtpStartUp
     {
         static readonly CwtpSettings settings;
-        private static Dictionary<ModRace, List<ThingDef>> raceDefs;
-        private static CompProperties_DynamicTraits parts = new CompProperties_DynamicTraits();
+        private static readonly Dictionary<ModRace, List<ThingDef>> raceDefs;
+        private static readonly CompProperties_DynamicTraits parts = new CompProperties_DynamicTraits();
         private const string defaultCategory = "WeaponsRanged";
 
         static CwtpStartUp()

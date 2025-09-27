@@ -1,115 +1,15 @@
-﻿using System;
+﻿using CWF.Extensions;
+using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
+using static Customize_Weapon_Temp_Patch.Races;
 
 namespace Customize_Weapon_Temp_Patch
 {
     public static class Utils
     {
-        /// <summary>
-        /// 兼容的mod
-        /// </summary>
-        public enum ModRace
-        {
-            Wolfein,
-            Miho,
-            Kiiro,
-            Milira,
-            Cinder,
-            Ratkin,
-            RatkinWeaponPlus,
-            RatkinOberoniaAurea,
-            Moyo,
-            MoyoCartel,
-            MoyoAbyss,
-            Moyo2,
-            Paniel,
-            Anty,
-            Moosesian,
-            FalloutHssn,
-            FalloutRetro,
-            KurinHar,
-            KurinMeow,
-            Rh2Mgs,
-            Rh2Msf,
-            MoeLotl,
-            HaloInfinite,
-            CeleTech,
-            CinderEWE,
-            RatkinRwen,
-            RatkinGW,
-            Destiny,
-            Destiny2,
-            Astrologer,
-            MiliraExpandedXY,
-
-            Aya,
-            Grimworld,
-            //Yuran,
-        };
-
-        /// <summary>
-        /// 单个mod对应的包名
-        /// </summary>
-        public static readonly Dictionary<ModRace, List<string>> ModPackageIds = new Dictionary<ModRace, List<string>>
-        {
-            { ModRace.Wolfein,              new List<string>{ "melondove.wolfeinrace" } } ,
-            { ModRace.Miho,                 new List<string>{ "miho.fortifiedoutremer"} },
-            { ModRace.Kiiro,                new List<string>{ "ancot.kiirorace" } },
-            { ModRace.Milira,               new List<string>{ "ancot.milirarace" }},
-            { ModRace.Cinder,               new List<string>{ "breadmo.cinders" } },
-            { ModRace.Ratkin,               new List<string>{ "fxz.solaris.ratkinracemod.odyssey" } },
-            { ModRace.RatkinWeaponPlus,     new List<string>{ "bbb.ratkinweapon.morefailure" } },
-            { ModRace.RatkinOberoniaAurea,  new List<string>{ "oark.ratkinfaction.oberoniaaurea" } },
-            { ModRace.Moyo,                 new List<string>{ "nemonian.my" } },
-            { ModRace.MoyoCartel,           new List<string>{ "nemonian.mycartel" } },
-            { ModRace.MoyoAbyss,            new List<string>{ "aoba.redmoyo" } },
-            { ModRace.Moyo2,                new List<string>{ "nemonian.my2.beta" } },
-            { ModRace.Paniel,               new List<string>{ "kalospacer.ahndemi.panieltheautomata" } },
-            { ModRace.Anty,                 new List<string>{ "roo.antyracemod" } },
-            { ModRace.Moosesian,            new List<string>{ "waffelf.moosesianrace" } },
-            { ModRace.FalloutHssn,          new List<string>{ "hssn.falloutweapons" } },
-            { ModRace.FalloutRetro,         new List<string>{ "legendaryminuteman.frwp" } },
-            { ModRace.KurinHar,             new List<string>{ "seioch.kurin.har" } },
-            { ModRace.KurinMeow,            new List<string>{ "eoralmilk.kurinmeowedition" } },
-            { ModRace.Rh2Mgs,               new List<string>{ "rh2.metal.gear.solid" } },
-            { ModRace.Rh2Msf,               new List<string>{ "rh2.faction.militaires.sans.frontieres" } },
-            { ModRace.MoeLotl,              new List<string>{ "hentailoliteam.axolotl" } },
-            { ModRace.HaloInfinite,         new List<string>{ "rollob312.hinfunsc" } },
-            { ModRace.CeleTech,             new List<string>{ "tot.celetech.mkiii" } },
-            { ModRace.CinderEWE,            new List<string>{ "asiimoves.cinderserodedweaponsaextended" } },
-            { ModRace.RatkinRwen,           new List<string>{ "darkkai.ratkinrangedweaponexpandednew" } },
-            { ModRace.RatkinGW,             new List<string>{ "browncofe.rcg" } },
-            { ModRace.Destiny,              new List<string>{ "milkwater.destinymod" } },
-            { ModRace.Destiny2,             new List<string>{ "d2.exotic.weapons" } },
-            { ModRace.Astrologer,           new List<string>{ "lof.astrologer" } },
-            { ModRace.MiliraExpandedXY,     new List<string>{ "xiyueym.miliraexpandedxy" } },
-
-
-            // 下方是虽然属于mod系列，但包名不以统一前缀开头的，通过包名全名指定。
-            { ModRace.Grimworld,            new List<string>{ "happypurging.ageofdarkness", "cvn.bloodpact" } },
-        };
-
-        /// <summary>
-        /// 通常系列mod以统一的包名开头
-        /// </summary>
-        public static readonly Dictionary<ModRace, string> ModPackageIdsRange = new Dictionary<ModRace, string>
-        {
-            { ModRace.Aya, "ayameduki" },
-            { ModRace.Grimworld, "grimworld" },
-        };
-
-        public enum ExtensionMods
-        {
-            CwExpanded,
-        }
-
-        public static readonly Dictionary<ExtensionMods, string> ExtensionsPackageIds = new Dictionary<ExtensionMods, string>
-        {
-            { ExtensionMods.CwExpanded, "feliperathal.customizeweaponexpanded" },
-        };
-
         public static readonly List<string> WeaponTagsVanilla = new List<string>
         {
             "CWF_Bow",
@@ -126,50 +26,6 @@ namespace Customize_Weapon_Temp_Patch
             "CWF_SniperRifle",
         };
 
-        public static readonly Dictionary<ExtensionMods, List<string>> WeaponTagsExtensions = new Dictionary<ExtensionMods, List<string>>
-        {
-            { ExtensionMods.CwExpanded, new List<string>
-            {
-                "CWE_Ammo_Gauss",
-                "CWE_Ammo_Laser",
-                "CWE_Ammo_Pellets",
-                "CWE_Ammo_Plasma",
-                "CWE_Ammo_Powder",
-                "CWE_BurstFire_Gauss",
-                "CWE_BurstFire_Gauss_L",
-                "CWE_BurstFire_Gauss_M",
-                "CWE_BurstFire_L",
-                "CWE_BurstFire_Laser",
-                "CWE_BurstFire_M",
-                "CWE_BurstFire_Plasma",
-                "CWE_Crossbow",
-                "CWE_Gauss",
-                "CWE_Launcher",
-                "CWE_Magazine_L_Gauss",
-                "CWE_Magazine_L_Laser",
-                "CWE_Magazine_L_Plasma",
-                "CWE_Magazine_L_Powder",
-                "CWE_Magazine_M_Gauss",
-                "CWE_Magazine_M_Laser",
-                "CWE_Magazine_M_Plasma",
-                "CWE_Magazine_M_Powder",
-                "CWE_Magazine_S_Gauss",
-                "CWE_Magazine_S_Laser",
-                "CWE_Magazine_S_Plasma",
-                "CWE_Magazine_S_Powder",
-                "CWE_Milira_Energy",
-                "CWE_Sights_L",
-                "CWE_Sights_M",
-                "CWE_Sights_S",
-                "CWE_Trait_BioBurner",
-                "CWE_Underbarrel_L",
-                "CWE_Underbarrel_M",
-                "CWE_Underbarrel_S",
-                "CWE_Underbarrel_T",
-            } },
-        };
-
-        #region 方法
         /// <summary>
         /// 检索所有已加载mod中的远程武器定义，并根据预定义的mod包名将它们分类到相应的mod种族中。
         /// </summary>
@@ -179,32 +35,52 @@ namespace Customize_Weapon_Temp_Patch
         public static Dictionary<ModRace, List<ThingDef>> GetThingDefsFromMods()
         {
             var defs = DefDatabase<ThingDef>.AllDefs;
-            var allModIds = ModPackageIds.Values.SelectMany(x => x).ToHashSet();
-            var modRangeIds = ModPackageIdsRange.Values.ToHashSet();
+            Log.Message($"ThingDef count:{defs.Count()}");
+            var allModIds = Enum.GetValues(typeof(ModRace))
+                .Cast<ModRace>()
+                .SelectMany(x => x.GetPackageIds<PackageIdAttribute>() ?? Enumerable.Empty<string>())
+                .ToHashSet();
+            Log.Message($"allModIds count:{allModIds.Count}");
+            var modRangeIds = Enum.GetValues(typeof(ModRace))
+                .Cast<ModRace>()
+                .SelectMany(x => x.GetPackageIds<PackageIdRangeAttribute>() ?? Enumerable.Empty<string>())
+                .ToHashSet();
+            Log.Message($"modRangeIds count:{modRangeIds.Count}");
             defs = defs.Where(x => x.IsWeapon && !x.IsMeleeWeapon);
 
             var defs1 = defs.Where(x => allModIds.Contains(x?.modContentPack?.PackageId));
+            Log.Message($"defs1 count:{defs1.Count()}");
             var defs2 = defs.Where(x => modRangeIds.Contains(x?.modContentPack?.PackageId));
-            var returnDict = Enum.GetValues(typeof(ModRace)).Cast<ModRace>().ToDictionary(k => k, _ => new List<ThingDef>());
+            Log.Message($"defs2 count:{defs2.Count()}");
+            var returnDict = GetRaces().ToDictionary(k => k, _ => new List<ThingDef>());
             foreach (var def in defs1)
             {
-                foreach (var key in ModPackageIds.Keys)
+                foreach (var race in GetRaces())
                 {
-                    if (ModPackageIds[key].Contains(def?.modContentPack?.PackageId))
-                    {
-                        returnDict.TryAdd(key, new List<ThingDef>());
-                        returnDict[key].Add(def);
-                    }
+                    Log.Message($"Checking {race} for {def.defName}");
+                    var ids = race.GetPackageIds<PackageIdAttribute>();
+                    if (ids.IsNullOrEmpty()) continue;
+                    ids.ForEach(id => Log.Message($"  id:{id}"));
+                    if (!ids.Contains(def?.modContentPack?.PackageId)) continue;
+                    Log.Message($"Matched");
+                    returnDict.TryAdd(race, new List<ThingDef>());
+                    Log.Message($"Adding {def.defName}");
+                    returnDict[race].Add(def);
                 }
             }
             foreach (var def in defs2)
             {
-                foreach (var key in ModPackageIdsRange.Keys)
+                foreach (var race in GetRaces())
                 {
-                    if (def?.modContentPack?.PackageId.StartsWith($"{ModPackageIdsRange[key]}.") ?? false)
+                    if (race.GetPackageIds<PackageIdRangeAttribute>().IsNullOrEmpty()) continue;
+
+                    foreach (var id in race.GetPackageIds<PackageIdRangeAttribute>())
                     {
-                        returnDict.TryAdd(key, new List<ThingDef>());
-                        returnDict[key].Add(def);
+                        if (def?.modContentPack?.PackageId.StartsWith($"{id}.") ?? false)
+                        {
+                            returnDict.TryAdd(race, new List<ThingDef>());
+                            returnDict[race].Add(def);
+                        }
                     }
                 }
             }
@@ -252,11 +128,14 @@ namespace Customize_Weapon_Temp_Patch
             foreach (var ext in Enum.GetValues(typeof(ExtensionMods)).Cast<ExtensionMods>())
             {
                 if (!CustomizeWeaponTempPatch.settings.Extensions[(int)ext]) continue;
-                if (!ModsConfig.IsActive(ExtensionsPackageIds[ext])) continue;
-                tags.AddRange(WeaponTagsExtensions[ext]);
+                var packageIds = ext.GetPackageIds<PackageIdAttribute>();
+                if (packageIds == null || !packageIds.Any()) continue;
+                if (!ModsConfig.IsActive(packageIds.First())) continue;
+                tags.AddRange(ext.GetWeaponTags());
             }
             return tags;
         }
-        #endregion
+
+        public static IEnumerable<ModRace> GetRaces() => Enum.GetValues(typeof(ModRace)).Cast<ModRace>();
     }
 }
