@@ -54,6 +54,8 @@ namespace Customize_Weapon_Temp_Patch
             ProcessRace(ModRace.RatkinGW);
             ProcessRace(ModRace.Destiny);
             ProcessRace(ModRace.Destiny2);
+            ProcessRace(ModRace.Astrologer, "LOF_AS_Category_WeaponRanged");
+            ProcessRace(ModRace.MiliraExpandedXY);
             //ProcessRace(ModRaces.Yuran, "YRWeapons");
 
             ProcessRace(ModRace.Aya);

@@ -67,8 +67,8 @@ namespace Customize_Weapon_Temp_Patch
     public class CwtpSettings : ModSettings
     {
         private const bool defaultValue = false;
-        public bool[] Races = Enumerable.Repeat(defaultValue, Enum.GetNames(typeof(ModRace)).Length).ToArray();
-        public bool[] Extensions = Enumerable.Repeat(defaultValue, Enum.GetNames(typeof(ExtensionMods)).Length).ToArray();
+        public bool[] Races = Enumerable.Repeat(true, Enum.GetNames(typeof(ModRace)).Length).ToArray();
+        public bool[] Extensions = Enumerable.Repeat(true, Enum.GetNames(typeof(ExtensionMods)).Length).ToArray();
         public bool OverwriteMode = defaultValue;
 
         public override void ExposeData()
@@ -76,11 +76,11 @@ namespace Customize_Weapon_Temp_Patch
             Scribe_Values.Look(ref OverwriteMode, nameof(OverwriteMode), defaultValue);
             foreach (var ext in Enum.GetValues(typeof(ExtensionMods)).Cast<ExtensionMods>())
             {
-                Scribe_Values.Look(ref Extensions[(int)ext], ext.ToString(), defaultValue);
+                Scribe_Values.Look(ref Extensions[(int)ext], ext.ToString(), true);
             }
             foreach (var race in Enum.GetValues(typeof(ModRace)).Cast<ModRace>())
             {
-                Scribe_Values.Look(ref Races[(int)race], race.ToString(), defaultValue);
+                Scribe_Values.Look(ref Races[(int)race], race.ToString(), true);
             }
             base.ExposeData();
         }
