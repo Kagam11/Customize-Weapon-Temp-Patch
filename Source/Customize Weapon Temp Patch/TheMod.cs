@@ -25,42 +25,54 @@ namespace Customize_Weapon_Temp_Patch
                 parts.supportParts.Add(part);
             }
 
-            ProcessRace(ModRace.Wolfein);
-            ProcessRace(ModRace.Miho);
-            ProcessRace(ModRace.Kiiro);
-            ProcessRace(ModRace.Milira);
-            ProcessRace(ModRace.Cinder);
-            ProcessRace(ModRace.Ratkin);
-            ProcessRace(ModRace.RatkinWeaponPlus);
-            ProcessRace(ModRace.RatkinOberoniaAurea, "OARatkin_WeaponsRanged");
-            ProcessRace(ModRace.Moyo, "Moyo_WeaponsRanged");
-            ProcessRace(ModRace.MoyoCartel, "Moyo_WeaponsRanged");
-            ProcessRace(ModRace.MoyoAbyss, "Moyo_WeaponsRanged");
-            ProcessRace(ModRace.Moyo2, "Moyo2_WeaponsCategory_Ranged");
-            ProcessRace(ModRace.Paniel, "PN_WeaponsRanged");
-            ProcessRace(ModRace.Anty, "AT_Weapons");
-            ProcessRace(ModRace.Moosesian, "MS_WeaponsRanged");
-            ProcessRace(ModRace.FalloutHssn);
-            ProcessRace(ModRace.FalloutRetro);
-            ProcessRace(ModRace.KurinHar);
-            ProcessRace(ModRace.KurinMeow);
-            ProcessRace(ModRace.Rh2Mgs);
-            ProcessRace(ModRace.Rh2Msf);
-            ProcessRace(ModRace.MoeLotl, "Axolotl_LotiQiRangedWeapon");
-            ProcessRace(ModRace.MoeLotl, "Axolotl_RangedWeapon");
-            ProcessRace(ModRace.HaloInfinite);
-            ProcessRace(ModRace.CeleTech, "TOT_Weapons_Cat");
-            ProcessRace(ModRace.CinderEWE);
-            ProcessRace(ModRace.RatkinRwen);
-            ProcessRace(ModRace.RatkinGW);
-            ProcessRace(ModRace.Destiny);
-            ProcessRace(ModRace.Destiny2);
-            ProcessRace(ModRace.Astrologer, "LOF_AS_Category_WeaponRanged");
-            ProcessRace(ModRace.MiliraExpandedXY);
-            //ProcessRace(ModRaces.Yuran, "YRWeapons");
+            Enum.GetValues(typeof(ModRace))
+                .Cast<ModRace>()
+                .ToList()
+                .ForEach(r =>
+                {
+                    var cate = r.GetItemCategories();
+                    if (cate.NullOrEmpty())
+                        ProcessRace(r);
+                    else
+                        cate.ForEach(c => ProcessRace(r, c));
+                });
 
-            ProcessRace(ModRace.Aya);
-            ProcessRace(ModRace.Grimworld);
+            //ProcessRace(ModRace.Wolfein);
+            //ProcessRace(ModRace.Miho);
+            //ProcessRace(ModRace.Kiiro);
+            //ProcessRace(ModRace.Milira);
+            //ProcessRace(ModRace.Cinder);
+            //ProcessRace(ModRace.Ratkin);
+            //ProcessRace(ModRace.RatkinWeaponPlus);
+            //ProcessRace(ModRace.RatkinOberoniaAurea, "OARatkin_WeaponsRanged");
+            //ProcessRace(ModRace.Moyo, "Moyo_WeaponsRanged");
+            //ProcessRace(ModRace.MoyoCartel, "Moyo_WeaponsRanged");
+            //ProcessRace(ModRace.MoyoAbyss, "Moyo_WeaponsRanged");
+            //ProcessRace(ModRace.Moyo2, "Moyo2_WeaponsCategory_Ranged");
+            //ProcessRace(ModRace.Paniel, "PN_WeaponsRanged");
+            //ProcessRace(ModRace.Anty, "AT_Weapons");
+            //ProcessRace(ModRace.Moosesian, "MS_WeaponsRanged");
+            //ProcessRace(ModRace.FalloutHssn);
+            //ProcessRace(ModRace.FalloutRetro);
+            //ProcessRace(ModRace.KurinHar);
+            //ProcessRace(ModRace.KurinMeow);
+            //ProcessRace(ModRace.Rh2Mgs);
+            //ProcessRace(ModRace.Rh2Msf);
+            //ProcessRace(ModRace.MoeLotl, "Axolotl_LotiQiRangedWeapon");
+            //ProcessRace(ModRace.MoeLotl, "Axolotl_RangedWeapon");
+            //ProcessRace(ModRace.HaloInfinite);
+            //ProcessRace(ModRace.CeleTech, "TOT_Weapons_Cat");
+            //ProcessRace(ModRace.CinderEWE);
+            //ProcessRace(ModRace.RatkinRwen);
+            //ProcessRace(ModRace.RatkinGW);
+            //ProcessRace(ModRace.Destiny);
+            //ProcessRace(ModRace.Destiny2);
+            //ProcessRace(ModRace.Astrologer, "LOF_AS_Category_WeaponRanged");
+            //ProcessRace(ModRace.MiliraExpandedXY);
+            ////ProcessRace(ModRaces.Yuran, "YRWeapons");
+
+            //ProcessRace(ModRace.Aya);
+            //ProcessRace(ModRace.Grimworld);
         }
         private static void ProcessRace(ModRace race, string category)
         {

@@ -1,6 +1,4 @@
-﻿using CWF.Extensions;
-using RimWorld;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -12,18 +10,19 @@ namespace Customize_Weapon_Temp_Patch
     {
         public static readonly List<string> WeaponTagsVanilla = new List<string>
         {
-            "CWF_Bow",
             "CWF_AssaultRifle",
             "CWF_BoltActionRifle",
-            "CWF_BurstFire",
-            "CWF_Charge",
-            "CWF_ChargeLance",
-            "CWF_Handgun",
-            "CWF_LMG",
-            "CWF_Minigun",
+            "CWF_SniperRifle",
             "CWF_Shotgun",
             "CWF_SMG",
-            "CWF_SniperRifle",
+            "CWF_LMG",
+            "CWF_Minigun",
+            "CWF_Handgun",
+            "CWF_ChargeLance",
+            "CWF_Bow",
+            "CWF_BeamRepeater",
+            "CWF_BurstFire",
+            "CWF_Charge",
         };
 
         /// <summary>
@@ -35,36 +34,36 @@ namespace Customize_Weapon_Temp_Patch
         public static Dictionary<ModRace, List<ThingDef>> GetThingDefsFromMods()
         {
             var defs = DefDatabase<ThingDef>.AllDefs;
-            Log.Message($"ThingDef count:{defs.Count()}");
+            //Log.Message($"ThingDef count:{defs.Count()}");
             var allModIds = Enum.GetValues(typeof(ModRace))
                 .Cast<ModRace>()
                 .SelectMany(x => x.GetPackageIds<PackageIdAttribute>() ?? Enumerable.Empty<string>())
                 .ToHashSet();
-            Log.Message($"allModIds count:{allModIds.Count}");
+            //Log.Message($"allModIds count:{allModIds.Count}");
             var modRangeIds = Enum.GetValues(typeof(ModRace))
                 .Cast<ModRace>()
                 .SelectMany(x => x.GetPackageIds<PackageIdRangeAttribute>() ?? Enumerable.Empty<string>())
                 .ToHashSet();
-            Log.Message($"modRangeIds count:{modRangeIds.Count}");
+            //Log.Message($"modRangeIds count:{modRangeIds.Count}");
             defs = defs.Where(x => x.IsWeapon && !x.IsMeleeWeapon);
 
             var defs1 = defs.Where(x => allModIds.Contains(x?.modContentPack?.PackageId));
-            Log.Message($"defs1 count:{defs1.Count()}");
+            //Log.Message($"defs1 count:{defs1.Count()}");
             var defs2 = defs.Where(x => modRangeIds.Contains(x?.modContentPack?.PackageId));
-            Log.Message($"defs2 count:{defs2.Count()}");
+            //Log.Message($"defs2 count:{defs2.Count()}");
             var returnDict = GetRaces().ToDictionary(k => k, _ => new List<ThingDef>());
             foreach (var def in defs1)
             {
                 foreach (var race in GetRaces())
                 {
-                    Log.Message($"Checking {race} for {def.defName}");
+                    //Log.Message($"Checking {race} for {def.defName}");
                     var ids = race.GetPackageIds<PackageIdAttribute>();
-                    if (ids.IsNullOrEmpty()) continue;
-                    ids.ForEach(id => Log.Message($"  id:{id}"));
+                    if (ids.NullOrEmpty()) continue;
+                    //ids.ForEach(id => Log.Message($"  id:{id}"));
                     if (!ids.Contains(def?.modContentPack?.PackageId)) continue;
-                    Log.Message($"Matched");
+                    //Log.Message($"Matched");
                     returnDict.TryAdd(race, new List<ThingDef>());
-                    Log.Message($"Adding {def.defName}");
+                    //Log.Message($"Adding {def.defName}");
                     returnDict[race].Add(def);
                 }
             }
@@ -72,7 +71,7 @@ namespace Customize_Weapon_Temp_Patch
             {
                 foreach (var race in GetRaces())
                 {
-                    if (race.GetPackageIds<PackageIdRangeAttribute>().IsNullOrEmpty()) continue;
+                    if (race.GetPackageIds<PackageIdRangeAttribute>().NullOrEmpty()) continue;
 
                     foreach (var id in race.GetPackageIds<PackageIdRangeAttribute>())
                     {

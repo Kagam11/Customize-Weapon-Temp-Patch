@@ -3,13 +3,15 @@
 	<name>Customize Weapon Temp Patch</name>
 	<author>Kagami</author>
 	<packageId>Kagami.CustomizeWeaponTempPatch</packageId>
-    <modVersion>1.2.3.0</modVersion>
+    <modVersion>1.2.4.0</modVersion>
 	<supportedVersions>
         <li>1.6</li>
 	</supportedVersions>
     <modDependencies>
         <li>
             <packageId>vortex.customizeweapon</packageId>
+            <displayName>Customize Weapon</displayName>
+            <downloadUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3550585103</downloadUrl>
         </li>
     </modDependencies>
 	<description>为一些种族添加了临时的定制武器补丁
@@ -49,6 +51,13 @@
         <li>d2.exotic.weapons</li>
         <li>lof.astrologer</li>
         <li>xiyueym.miliraexpandedxy</li>
+        <li>lof.astrologer</li>
+        <li>xiyueym.miliraexpandedxy</li>
+        <li>src.core.markeazzyh</li>
+        <li>zawodroshen.pandora.frontier.remake</li>
+        <li>vanya.polarisbloc.securityforce.tmp</li>
+        <li>dual.weap</li>
+        <li>aoba.deadmanswitch.core</li>
 
         <li>grimworld.core</li>
         <li>ayameduki.ayaracepremise</li>
