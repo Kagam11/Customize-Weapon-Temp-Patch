@@ -31,7 +31,10 @@ namespace Customize_Weapon_Temp_Patch
 
             Text.Font = GameFont.Medium;
             list.Label("CwtpSettingsDesc".Translate());
+            list.Gap(10);
+            list.CheckboxLabeled("CwtpForceModeLabel".Translate(), ref settings.ForceMode, tooltip: "CwtpForceModeDesc".Translate());
             Text.Font = originFont;
+
             list.CheckboxLabeled("CwtpOverwriteModeLabel".Translate(), ref settings.OverwriteMode);
             list.Gap(15);
             Text.Font = GameFont.Medium;
@@ -68,6 +71,7 @@ namespace Customize_Weapon_Temp_Patch
     public class CwtpSettings : ModSettings
     {
         private const bool defaultValue = false;
+        public bool ForceMode = defaultValue;
         public bool[] Races = Enumerable.Repeat(true, Enum.GetNames(typeof(ModRace)).Length).ToArray();
         public bool[] Extensions = Enumerable.Repeat(true, Enum.GetNames(typeof(ExtensionMods)).Length).ToArray();
         public bool OverwriteMode = defaultValue;
@@ -75,6 +79,7 @@ namespace Customize_Weapon_Temp_Patch
         public override void ExposeData()
         {
             Scribe_Values.Look(ref OverwriteMode, nameof(OverwriteMode), defaultValue);
+            Scribe_Values.Look(ref ForceMode, nameof(ForceMode), defaultValue);
             foreach (var ext in Enum.GetValues(typeof(ExtensionMods)).Cast<ExtensionMods>())
             {
                 Scribe_Values.Look(ref Extensions[(int)ext], ext.ToString(), true);

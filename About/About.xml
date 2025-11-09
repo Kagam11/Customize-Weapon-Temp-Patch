@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Customize Weapon Temp Patch</name>
-	<author>Kagami</author>
-	<packageId>Kagami.CustomizeWeaponTempPatch</packageId>
-    <modVersion>1.2.4.0</modVersion>
-	<supportedVersions>
+    <name>Customize Weapon Temp Patch</name>
+    <author>Kagami</author>
+    <packageId>Kagami.CustomizeWeaponTempPatch</packageId>
+    <modVersion>1.3.0.0</modVersion>
+    <supportedVersions>
         <li>1.6</li>
-	</supportedVersions>
+    </supportedVersions>
     <modDependencies>
         <li>
             <packageId>vortex.customizeweapon</packageId>
@@ -14,11 +14,9 @@
             <downloadUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3550585103</downloadUrl>
         </li>
     </modDependencies>
-	<description>为一些种族添加了临时的定制武器补丁
-    </description>
+    <description>为一些种族添加了临时的定制武器补丁</description>
     
-	<loadAfter>
-		<li>vortex.customizeweapon</li>
+    <loadAfter>
         <li>vortex.customizeweapon</li>
         <li>melondove.wolfeinrace</li>
         <li>miho.fortifiedoutremer</li>
@@ -58,10 +56,14 @@
         <li>vanya.polarisbloc.securityforce.tmp</li>
         <li>dual.weap</li>
         <li>aoba.deadmanswitch.core</li>
+        <li>runnelatki.rabbieracemod</li>
+        <li>lsk.rabbieweaponsandequipment</li>
+        <li>ariandel.miliraimperium</li>
 
         <li>grimworld.core</li>
         <li>ayameduki.ayaracepremise</li>
+        <li>akarthus.thecosmicodyssey.core</li>
 
         <li>feliperathal.customizeweaponexpanded</li>
-	</loadAfter>
+    </loadAfter>
 </ModMetaData>

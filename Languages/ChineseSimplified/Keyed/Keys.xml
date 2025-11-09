@@ -3,12 +3,14 @@
     <CustomizeWeaponTempPatch>临时定制武器补丁</CustomizeWeaponTempPatch>
 
     <CwtpSettingsDesc>综合设置</CwtpSettingsDesc>
+    <CwtpForceModeLabel>新适配模式</CwtpForceModeLabel>
+    <CwtpForceModeDesc>采用新的适配模式，将兼容所有远程武器，不再需要对每个mod单独适配（该选项开启时将覆盖下方的种族设置）</CwtpForceModeDesc>
     <CwtpOverwriteModeLabel>覆盖模式</CwtpOverwriteModeLabel>
 
     <CwtpExtensionSettingsLabel>扩展开关</CwtpExtensionSettingsLabel>
     <CwtpCwExpanded>Custom Weapons Expanded</CwtpCwExpanded>
 
-    <CwtpRaceSettingsLabel>种族开关</CwtpRaceSettingsLabel>
+    <CwtpRaceSettingsLabel>种族开关（请试试新适配模式，传统模式将在未来移除）</CwtpRaceSettingsLabel>
     <CwtpWolfein>沃芬族</CwtpWolfein>
     <CwtpMiho>美狐族</CwtpMiho>
     <CwtpKiiro>绮罗族</CwtpKiiro>
@@ -44,9 +46,13 @@
     <CwtpPandoraFR>Pandora:Frontier ReMake</CwtpPandoraFR>
     <CwtpPolarisblocSF>Polarisbloc - Security Force tmp port</CwtpPolarisblocSF>
     <CwtpDualWeapon>Dual Weapons</CwtpDualWeapon>
+    <CwtpRabbie>月兔族</CwtpRabbie>
+    <CwtpRabbieWeapons>[LSK]月兔扩展——军用武器和装备</CwtpRabbieWeapons>
+    <CwtpMiliraImperium>米莉拉帝国</CwtpMiliraImperium>
     
     <CwtpDeadManSwitch>失能机关系列</CwtpDeadManSwitch>
     <CwtpAya>人工种族系列</CwtpAya>
     <CwtpGrimworld>Grimworld系列</CwtpGrimworld>
+    <CwtpTheCosmicOddyssey>星海征途系列</CwtpTheCosmicOddyssey>
 
 </LanguageData>

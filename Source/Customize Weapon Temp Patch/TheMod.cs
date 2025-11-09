@@ -14,15 +14,59 @@ namespace Customize_Weapon_Temp_Patch
         static readonly CwtpSettings settings;
         private static readonly Dictionary<ModRace, List<ThingDef>> raceDefs;
         private static readonly CompProperties_DynamicTraits parts = new CompProperties_DynamicTraits();
+        private static readonly List<PartDef> partDefs = new List<PartDef>();
         private const string defaultCategory = "WeaponsRanged";
 
         static CwtpStartUp()
         {
             raceDefs = GetThingDefsFromMods();
             settings = CustomizeWeaponTempPatch.settings;
-            foreach (var part in Enum.GetValues(typeof(Part)).Cast<Part>())
+            partDefs.AddRange(DefDatabase<PartDef>.AllDefs.ToList());
+            //Log.Message($"Total parts count: {partDefs.Count}");
+            //foreach (var part in Enum.GetValues(typeof(Part)).Cast<Part>())
+            //{
+            //    parts.supportParts.Add(part);
+            //}
+
+            if (settings.ForceMode)
             {
-                parts.supportParts.Add(part);
+                var tags = GetAllWeaponTags();
+                var allGuns = DefDatabase<ThingDef>.AllDefs;
+                allGuns = allGuns.Where(x => x.IsRangedWeapon && (x.Verbs?.Any(v => v.verbClass == typeof(Verb_Shoot)) ?? false));
+                foreach (var item in allGuns)
+                {
+                    //Log.Message($"Processing weapon {item.label}");
+                    if (item.comps?.FirstOrDefault(x => x is CompProperties_DynamicTraits) is CompProperties_DynamicTraits dynamicTraits)
+                    {
+                        //Log.Message($"exists");
+                        if (settings.OverwriteMode)
+                        {
+                            if (dynamicTraits.supportParts.Count > 0)
+                            {
+                                //Log.Message($"Clearing existing parts for weapon {item.label}");
+                                dynamicTraits.supportParts.Clear();
+                            }
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        //Log.Message($"not exist");
+                        item.comps.Add(new CompProperties_DynamicTraits());
+                    }
+
+                    dynamicTraits = item.comps?.FirstOrDefault(x => x is CompProperties_DynamicTraits) as CompProperties_DynamicTraits;
+                    var supportParts = dynamicTraits.supportParts;
+                    //Log.Message($"Adding parts to weapon {item.label}");
+                    item.weaponTags?.AddRange(tags);
+                    //Log.Message($"Adding parts to weapon {item.label} - before count: {supportParts.Count}");
+                    (item.comps?.FirstOrDefault(x => x is CompProperties_DynamicTraits) as CompProperties_DynamicTraits)?.supportParts?.AddRange(partDefs);
+                    //Log.Message($"Adding parts to weapon {item.label} - after count: {supportParts.Count}");
+                }
+                return;
             }
 
             Enum.GetValues(typeof(ModRace))
@@ -36,43 +80,6 @@ namespace Customize_Weapon_Temp_Patch
                     else
                         cate.ForEach(c => ProcessRace(r, c));
                 });
-
-            //ProcessRace(ModRace.Wolfein);
-            //ProcessRace(ModRace.Miho);
-            //ProcessRace(ModRace.Kiiro);
-            //ProcessRace(ModRace.Milira);
-            //ProcessRace(ModRace.Cinder);
-            //ProcessRace(ModRace.Ratkin);
-            //ProcessRace(ModRace.RatkinWeaponPlus);
-            //ProcessRace(ModRace.RatkinOberoniaAurea, "OARatkin_WeaponsRanged");
-            //ProcessRace(ModRace.Moyo, "Moyo_WeaponsRanged");
-            //ProcessRace(ModRace.MoyoCartel, "Moyo_WeaponsRanged");
-            //ProcessRace(ModRace.MoyoAbyss, "Moyo_WeaponsRanged");
-            //ProcessRace(ModRace.Moyo2, "Moyo2_WeaponsCategory_Ranged");
-            //ProcessRace(ModRace.Paniel, "PN_WeaponsRanged");
-            //ProcessRace(ModRace.Anty, "AT_Weapons");
-            //ProcessRace(ModRace.Moosesian, "MS_WeaponsRanged");
-            //ProcessRace(ModRace.FalloutHssn);
-            //ProcessRace(ModRace.FalloutRetro);
-            //ProcessRace(ModRace.KurinHar);
-            //ProcessRace(ModRace.KurinMeow);
-            //ProcessRace(ModRace.Rh2Mgs);
-            //ProcessRace(ModRace.Rh2Msf);
-            //ProcessRace(ModRace.MoeLotl, "Axolotl_LotiQiRangedWeapon");
-            //ProcessRace(ModRace.MoeLotl, "Axolotl_RangedWeapon");
-            //ProcessRace(ModRace.HaloInfinite);
-            //ProcessRace(ModRace.CeleTech, "TOT_Weapons_Cat");
-            //ProcessRace(ModRace.CinderEWE);
-            //ProcessRace(ModRace.RatkinRwen);
-            //ProcessRace(ModRace.RatkinGW);
-            //ProcessRace(ModRace.Destiny);
-            //ProcessRace(ModRace.Destiny2);
-            //ProcessRace(ModRace.Astrologer, "LOF_AS_Category_WeaponRanged");
-            //ProcessRace(ModRace.MiliraExpandedXY);
-            ////ProcessRace(ModRaces.Yuran, "YRWeapons");
-
-            //ProcessRace(ModRace.Aya);
-            //ProcessRace(ModRace.Grimworld);
         }
         private static void ProcessRace(ModRace race, string category)
         {
@@ -104,6 +111,45 @@ namespace Customize_Weapon_Temp_Patch
 
                 def?.comps?.Add(parts);
                 def?.weaponTags?.AddRange(tags);
+            }
+        }
+        [Obsolete]
+        private static void AddPartsNotSure(List<ThingDef> defs, string category)
+        {
+            var tags = GetAllWeaponTags();
+            foreach (var def in defs)
+            {
+                // 只处理对应的武器类
+                if (!(def?.thingCategories?.Any(x => x?.defName == category) ?? false)) continue;
+                // 检测是否已有组件
+                if (settings.OverwriteMode)
+                {
+                    def?.comps?.RemoveAll(x => x is CompProperties_DynamicTraits);
+                    def?.weaponTags?.RemoveAll(x => tags.Contains(x));
+                }
+                else if (def?.comps?.Any(x => x is CompProperties_DynamicTraits) ?? false) continue;
+                var graphicData = new GraphicData()
+                {
+                    texPath = def.graphicData.texPath,
+                    graphicClass = def.graphicData.graphicClass,
+                };
+                //var weaponTags = tags;
+                var adapter = new AdapterDef()
+                {
+                    defName = def.defName,
+                    //graphicData = graphicData,
+                    //weaponTags = weaponTags,
+                };
+                var privateGraphicData = typeof(AdapterDef).GetField("graphicData", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                privateGraphicData.SetValue(adapter, graphicData);
+                var privateWeaponTags = typeof(AdapterDef).GetField("weaponTags", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                privateWeaponTags.SetValue(adapter, tags);
+
+                def?.comps?.Add(parts);
+                def?.weaponTags?.AddRange(tags);
+
+                DefDatabase<Def>.Add(adapter);
+
             }
         }
     }

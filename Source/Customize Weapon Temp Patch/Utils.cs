@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CWF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -85,6 +86,7 @@ namespace Customize_Weapon_Temp_Patch
             }
             return returnDict;
         }
+
 
         /// <summary>
         /// 将两个包含值列表的字典合并，通过组合匹配键的列表来实现合并。

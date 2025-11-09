@@ -126,8 +126,28 @@
             [PackageId("dual.weap")]
             DualWeapon,
 
-            [PackageIdRange("aoba.deadmanswitch")]
-            DeadManSwitch,
+            [PackageId("runnelatki.rabbieracemod")]
+            [ItemCategory("RB_Weapon")]
+            [ItemCategory("RB_Weapon_F")]
+            [ItemCategory("RB_Weapon_F_EC")]
+            Rabbie,
+
+            [PackageId("lsk.rabbieweaponsandequipment")]
+            RabbieExpand,
+
+            [PackageId("ariandel.miliraimperium")]
+            MiliraImperium,
+
+            [PackageId("rh2.helldivers.super.firearms")]
+            [ItemCategory("RH2SEAF_RangedMain")]
+            [ItemCategory("RH2SEAF_Pistols")]
+            [ItemCategory("RH2SEAF_PDWMain")]
+            [ItemCategory("RH2SEAF_ShotgunsMain")]
+            [ItemCategory("RH2SEAF_AssaultRifle")]
+            [ItemCategory("RH2SEAF_DMR")]
+            [ItemCategory("RH2SEAF_AMR")]
+            [ItemCategory("RH2SEAF_SupportMain")]
+            Helldrivers,
 
             //-------------------------------------------------------//
 
@@ -138,6 +158,12 @@
             [PackageId("happypurging.ageofdarkness")]
             [PackageId("cvn.bloodpact")]
             Grimworld,
+
+            [PackageIdRange("aoba.deadmanswitch")]
+            DeadManSwitch,
+
+            [PackageIdRange("akarthus.thecosmicodyssey")]
+            TheCosmicOddyssey,
             //Yuran,
         };
 
@@ -168,6 +194,15 @@
                 "CWE_Magazine_S_Laser",
                 "CWE_Magazine_S_Plasma",
                 "CWE_Magazine_S_Powder",
+                "CWE_ModuleAmmo",
+                "CWE_ModuleBarrel",
+                "CWE_ModuleGrip",
+                "CWE_ModuleMagazine",
+                "CWE_ModuleReceiver",
+                "CWE_ModuleSight",
+                "CWE_ModuleStock",
+                "CWE_ModuleTrigger",
+                "CWE_ModuleUnderbarrel",
                 "CWE_Sights_L",
                 "CWE_Sights_M",
                 "CWE_Sights_S",

@@ -3,12 +3,14 @@
     <CustomizeWeaponTempPatch>Customize Weapon Temp Patch</CustomizeWeaponTempPatch>
 
     <CwtpSettingsDesc>Overall Settings</CwtpSettingsDesc>
+    <CwtpForceModeLabel>New Patch Mode</CwtpForceModeLabel>
+    <CwtpForceModeDesc>Use new mode to patch all weapons, no need to adapt each mod separately (this will override the race settings below when enabled)</CwtpForceModeDesc>
     <CwtpOverwriteModeLabel>Overwrite Mode</CwtpOverwriteModeLabel>
 
     <CwtpExtensionSettingsLabel>Extensions</CwtpExtensionSettingsLabel>
     <CwtpCwExpanded>Custom Weapons Expanded</CwtpCwExpanded>
 
-    <CwtpRaceSettingsLabel>Races</CwtpRaceSettingsLabel>
+    <CwtpRaceSettingsLabel>Races (Try the new mode above, legacy mode will be removed in the future)</CwtpRaceSettingsLabel>
     <CwtpWolfein>Wolfein Race</CwtpWolfein>
     <CwtpMiho>Miho, the celestial fox</CwtpMiho>
     <CwtpKiiro>Kiiro Race</CwtpKiiro>
@@ -44,9 +46,13 @@
     <CwtpPandoraFR>Pandora:Frontier ReMake</CwtpPandoraFR>
     <CwtpPolarisblocSF>Polarisbloc - Security Force tmp port</CwtpPolarisblocSF>
     <CwtpDualWeapon>Dual Weapons</CwtpDualWeapon>
+    <CwtpRabbie>Rabbie The Moonrabbit race</CwtpRabbie>
+    <CwtpRabbieWeapons>LSK's RB Expanded</CwtpRabbieWeapons>
+    <CwtpMiliraImperium>Milira Faction: Milira Imperium</CwtpMiliraImperium>
 
     <CwtpDeadManSwitch>Dead man's Switch series</CwtpDeadManSwitch>
     <CwtpAya>Aya series</CwtpAya>
     <CwtpGrimworld>Grimworld series</CwtpGrimworld>
+    <CwtpTheCosmicOddyssey>The Cosmic Odyssey series</CwtpTheCosmicOddyssey>
 
 </LanguageData>
