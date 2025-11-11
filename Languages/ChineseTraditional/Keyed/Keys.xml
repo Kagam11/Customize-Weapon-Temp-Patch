@@ -1,58 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-    <CustomizeWeaponTempPatch>臨時定製武器補丁</CustomizeWeaponTempPatch>
-
-    <CwtpSettingsDesc>綜合設置</CwtpSettingsDesc>
-    <CwtpForceModeLabel>新適配模式</CwtpForceModeLabel>
-    <CwtpForceModeDesc>採用新的適配模式，將兼容所有遠程武器，不再需要對每個mod單獨適配（該選項開啓時將覆蓋下方的種族設置）</CwtpForceModeDesc>
-    <CwtpOverwriteModeLabel>覆蓋模式</CwtpOverwriteModeLabel>
-
-    <CwtpExtensionSettingsLabel>擴展開關</CwtpExtensionSettingsLabel>
-    <CwtpCwExpanded>Custom Weapons Expanded</CwtpCwExpanded>
-
-    <CwtpRaceSettingsLabel>種族開關（請試試新適配模式，傳統模式將在未來移除）</CwtpRaceSettingsLabel>
-    <CwtpWolfein>沃芬族</CwtpWolfein>
-    <CwtpMiho>美狐族</CwtpMiho>
-    <CwtpKiiro>綺羅族</CwtpKiiro>
-    <CwtpMilira>米莉拉</CwtpMilira>
-    <CwtpCinder>煙燼族</CwtpCinder>
-    <CwtpRatkin>鼠族</CwtpRatkin>
-    <CwtpRatkinWeaponPlus>鼠族武器擴展</CwtpRatkinWeaponPlus>
-    <CwtpRatkinOberoniaAurea>鼠族派系擴展：金鳶尾蘭</CwtpRatkinOberoniaAurea>
-    <CwtpMoyo>茉約族</CwtpMoyo>
-    <CwtpMoyoCartel>茉約族 - 深海罪企聯盟</CwtpMoyoCartel>
-    <CwtpMoyoAbyss>紅茉約族</CwtpMoyoAbyss>
-    <CwtpMoyo2>茉約族2.0</CwtpMoyo2>
-    <CwtpPaniel>帕妮艾</CwtpPaniel>
-    <CwtpAnty>蟻族</CwtpAnty>
-    <CwtpMoosesian>駝鹿族</CwtpMoosesian>
-    <CwtpFalloutHssn>HSSN輻射武器包</CwtpFalloutHssn>
-    <CwtpFalloutRetro>輻射覆古武器包</CwtpFalloutRetro>
-    <CwtpKurinHar>魅狐HAR版</CwtpKurinHar>
-    <CwtpKurinMeow>魅狐喵喵版</CwtpKurinMeow>
-    <CwtpRh2Mgs>[rh2] 潛龍諜影</CwtpRh2Mgs>
-    <CwtpRh2Msf>[rh2] 無國界之師</CwtpRh2Msf>
-    <CwtpMoeLotl>萌螈族</CwtpMoeLotl>
-    <CwtpHaloInfinite>光環無限</CwtpHaloInfinite>
-    <CwtpCeleTech>天工鑄造</CwtpCeleTech>
-    <CwtpCinderEWE>煙燼武器拓展</CwtpCinderEWE>
-    <CwtpRatkinRwen>Ratkin Ranged Weapon Expanded New</CwtpRatkinRwen>
-    <CwtpRatkinGW>Ratkin Clothes - GreatWar</CwtpRatkinGW>
-    <CwtpDestiny>Destiny Exotic Weapons</CwtpDestiny>
-    <CwtpDestiny2>Destiny 2 Exotic Weapons</CwtpDestiny2>
-    <CwtpAstrologer>占星師</CwtpAstrologer>
-    <CwtpMiliraExpandedXY>Xiyue的米莉拉內容拓展</CwtpMiliraExpandedXY>
-    <CwtpStarRing>美狐:星環公司</CwtpStarRing>
-    <CwtpPandoraFR>Pandora:Frontier ReMake</CwtpPandoraFR>
-    <CwtpPolarisblocSF>Polarisbloc - Security Force tmp port</CwtpPolarisblocSF>
-    <CwtpDualWeapon>Dual Weapons</CwtpDualWeapon>
-    <CwtpRabbie>月兔族</CwtpRabbie>
-    <CwtpRabbieWeapons>[LSK]月兔擴展——軍用武器和裝備</CwtpRabbieWeapons>
-    <CwtpMiliraImperium>米莉拉帝國</CwtpMiliraImperium>
-    
-    <CwtpDeadManSwitch>失能機關係列</CwtpDeadManSwitch>
-    <CwtpAya>人工種族系列</CwtpAya>
-    <CwtpGrimworld>Grimworld系列</CwtpGrimworld>
-    <CwtpTheCosmicOddyssey>星海征途系列</CwtpTheCosmicOddyssey>
-
+    <BorderlessCustomize>無界定製</BorderlessCustomize>
+    <OverwriteModeLabel>覆蓋模式</OverwriteModeLabel>
+    <OverwriteModeDesc>該選項控制當別的mod已經給武器配置槽位時的方案\n- 若開啓，則刪除原有方案後給所有武器開槽\n- 若關閉，則使用原有配置</OverwriteModeDesc>
 </LanguageData>

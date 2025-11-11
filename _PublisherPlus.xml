@@ -2,7 +2,9 @@
 <Configuration>
   <Excluded>
     <exclude>.git</exclude>
-    <exclude>Source\Customize Weapon Temp Patch\.vs</exclude>
-    <exclude>Source\Customize Weapon Temp Patch\obj</exclude>
+    <exclude>.vs</exclude>
+    <exclude>read.py</exclude>
+    <exclude>Source\Borderless Customize\.vs</exclude>
+    <exclude>Source\Borderless Customize\obj</exclude>
   </Excluded>
 </Configuration>

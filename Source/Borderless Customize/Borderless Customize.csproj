@@ -7,11 +7,12 @@
     <ProjectGuid>{D5F2DFAD-06DE-4077-B704-E05C93D2CF65}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Customize_Weapon_Temp_Patch</RootNamespace>
-    <AssemblyName>Customize Weapon Temp Patch</AssemblyName>
+    <RootNamespace>BorderlessCustomize</RootNamespace>
+    <AssemblyName>Borderless Customize</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <LangVersion>9</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,8 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions.cs" />
-    <Compile Include="Races.cs" />
+    <Compile Include="Mods.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="TheMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

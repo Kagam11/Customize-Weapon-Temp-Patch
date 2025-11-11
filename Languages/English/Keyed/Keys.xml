@@ -1,58 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-    <CustomizeWeaponTempPatch>Customize Weapon Temp Patch</CustomizeWeaponTempPatch>
-
-    <CwtpSettingsDesc>Overall Settings</CwtpSettingsDesc>
-    <CwtpForceModeLabel>New Patch Mode</CwtpForceModeLabel>
-    <CwtpForceModeDesc>Use new mode to patch all weapons, no need to adapt each mod separately (this will override the race settings below when enabled)</CwtpForceModeDesc>
-    <CwtpOverwriteModeLabel>Overwrite Mode</CwtpOverwriteModeLabel>
-
-    <CwtpExtensionSettingsLabel>Extensions</CwtpExtensionSettingsLabel>
-    <CwtpCwExpanded>Custom Weapons Expanded</CwtpCwExpanded>
-
-    <CwtpRaceSettingsLabel>Races (Try the new mode above, legacy mode will be removed in the future)</CwtpRaceSettingsLabel>
-    <CwtpWolfein>Wolfein Race</CwtpWolfein>
-    <CwtpMiho>Miho, the celestial fox</CwtpMiho>
-    <CwtpKiiro>Kiiro Race</CwtpKiiro>
-    <CwtpMilira>Milira Race</CwtpMilira>
-    <CwtpCinder>Cinders of the Embergarden</CwtpCinder>
-    <CwtpRatkin>NewRatkinPlus</CwtpRatkin>
-    <CwtpRatkinWeaponPlus>Ratkin Weapon +</CwtpRatkinWeaponPlus>
-    <CwtpRatkinOberoniaAurea>Ratkin Faction: Oberonia Aurea</CwtpRatkinOberoniaAurea>
-    <CwtpMoyo>Moyo - from the depth</CwtpMoyo>
-    <CwtpMoyoCartel>Moyo - The cartel arrives</CwtpMoyoCartel>
-    <CwtpMoyoAbyss>Moyo - Light in the Abyss</CwtpMoyoAbyss>
-    <CwtpMoyo2>Moyo2.0 - Blood stained business</CwtpMoyo2>
-    <CwtpPaniel>Paniel the Automata</CwtpPaniel>
-    <CwtpAnty>Anty the war ant race</CwtpAnty>
-    <CwtpMoosesian>Moosesian race</CwtpMoosesian>
-    <CwtpFalloutHssn>[hssn] FALLOUT - Weapons</CwtpFalloutHssn>
-    <CwtpFalloutRetro>Fallout: Retro Weapon Pack</CwtpFalloutRetro>
-    <CwtpKurinHar>Kurin HAR Edition</CwtpKurinHar>
-    <CwtpKurinMeow>Kurin Meow Edition</CwtpKurinMeow>
-    <CwtpRh2Mgs>[rh2] Metal Gear Solid</CwtpRh2Mgs>
-    <CwtpRh2Msf>[rh2] Militaires Sans Frontieres</CwtpRh2Msf>
-    <CwtpMoeLotl>MoeLotl race</CwtpMoeLotl>
-    <CwtpHaloInfinite>Halo Infinite</CwtpHaloInfinite>
-    <CwtpCeleTech>CeleTech Arsenal MKIII</CwtpCeleTech>
-    <CwtpCinderEWE>Cinders_ErodedWeaponsaExtended</CwtpCinderEWE>
-    <CwtpRatkinRwen>Ratkin Ranged Weapon Expanded New</CwtpRatkinRwen>
-    <CwtpRatkinGW>Ratkin Clothes - GreatWar</CwtpRatkinGW>
-    <CwtpDestiny>Destiny Exotic Weapons</CwtpDestiny>
-    <CwtpDestiny2>Destiny 2 Exotic Weapons</CwtpDestiny2>
-    <CwtpAstrologer>Astrologer Race</CwtpAstrologer>
-    <CwtpMiliraExpandedXY>Xiyue's Milira Expanded</CwtpMiliraExpandedXY>
-    <CwtpStarRing>Miho: Star Ring Corporation</CwtpStarRing>
-    <CwtpPandoraFR>Pandora:Frontier ReMake</CwtpPandoraFR>
-    <CwtpPolarisblocSF>Polarisbloc - Security Force tmp port</CwtpPolarisblocSF>
-    <CwtpDualWeapon>Dual Weapons</CwtpDualWeapon>
-    <CwtpRabbie>Rabbie The Moonrabbit race</CwtpRabbie>
-    <CwtpRabbieWeapons>LSK's RB Expanded</CwtpRabbieWeapons>
-    <CwtpMiliraImperium>Milira Faction: Milira Imperium</CwtpMiliraImperium>
-
-    <CwtpDeadManSwitch>Dead man's Switch series</CwtpDeadManSwitch>
-    <CwtpAya>Aya series</CwtpAya>
-    <CwtpGrimworld>Grimworld series</CwtpGrimworld>
-    <CwtpTheCosmicOddyssey>The Cosmic Odyssey series</CwtpTheCosmicOddyssey>
-
+    <BorderlessCustomize>Borderless Customize</BorderlessCustomize>
+    <OverwriteModeLabel>Overwrite Mode</OverwriteModeLabel>
+    <OverwriteModeDesc>This option controls the approach when another mod has already configured slots for the weapon.\n- If enabled, it will remove the original configuration and add slots to all weapons.\n- If disabled, it will use the original configuration.</OverwriteModeDesc>
 </LanguageData>
