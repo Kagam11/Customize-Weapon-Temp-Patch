@@ -3,4 +3,9 @@
     <BorderlessCustomize>无界定制</BorderlessCustomize>
     <OverwriteModeLabel>覆盖模式</OverwriteModeLabel>
     <OverwriteModeDesc>该选项控制当别的mod已经给武器配置槽位时的方案\n- 若开启，则删除原有方案后给所有武器开槽\n- 若关闭，则使用原有配置</OverwriteModeDesc>
+    <AddColorLabel>是否给武器添加颜色</AddColorLabel>
+    <AddColorDesc>开启后将给所有武器添加CWF的自定义颜色Comp，目前会导致所有武器带有随机颜色。</AddColorDesc>
+    <AddRenameLabel>是否给武器添加重命名功能</AddRenameLabel>
+    <AddRenameDesc>开启后可以在自定义面板修改武器的名称。</AddRenameDesc>
+    <RemoveColorComps>移除该地图中所有的武器颜色（点击后保存并读取存档即生效）</RemoveColorComps>
 </LanguageData>

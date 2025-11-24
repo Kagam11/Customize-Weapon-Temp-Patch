@@ -3,4 +3,9 @@
     <BorderlessCustomize>Borderless Customize</BorderlessCustomize>
     <OverwriteModeLabel>Overwrite Mode</OverwriteModeLabel>
     <OverwriteModeDesc>This option controls the approach when another mod has already configured slots for the weapon.\n- If enabled, it will remove the original configuration and add slots to all weapons.\n- If disabled, it will use the original configuration.</OverwriteModeDesc>
+    <AddColorLabel>Add color to weapon</AddColorLabel>
+    <AddColorDesc>When enabled, CompColorable from CWF will be added to weapon, which will cause weapon randomly colored currently.</AddColorDesc>
+    <AddRenameLabel>Add rename ability to weapon</AddRenameLabel>
+    <AddRenameDesc>When enabled, weapons will be renameable on customize panel.</AddRenameDesc>
+    <RemoveColorComps>Remove all colors on weapon of this map (After clicking, save &amp; load your save file to take effect)</RemoveColorComps>
 </LanguageData>
