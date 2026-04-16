@@ -3,7 +3,7 @@
     <name>Borderless Customize</name>
     <author>Kagami</author>
     <packageId>Kagami.BorderlessCustomize</packageId>
-    <modVersion>2.0.2.0</modVersion>
+    <modVersion>2.0.3.1</modVersion>
     <supportedVersions>
         <li>1.6</li>
     </supportedVersions>

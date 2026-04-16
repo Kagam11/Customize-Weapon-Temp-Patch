@@ -1,6 +1,4 @@
 ﻿using CWF;
-using RimWorld;
-using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
@@ -9,6 +7,7 @@ namespace BorderlessCustomize
     [StaticConstructorOnStartup]
     internal static class BcStartUp
     {
+        private static ThingCategoryDef grenadeDef;
         static readonly BcSettings settings;
 
         static BcStartUp()
@@ -16,7 +15,8 @@ namespace BorderlessCustomize
             settings = BorderlessCustomize.settings;
             // get parts
             var partDefs = DefDatabase<PartDef>.AllDefs.ToList();
-            //var tags = new List<string>();
+
+            grenadeDef = DefDatabase<ThingCategoryDef>.GetNamed("Grenades");
 
             // get weapontags
             var modules = CWF.ModuleDatabase.AllModuleDefs.ToList();
@@ -33,9 +33,10 @@ namespace BorderlessCustomize
 
 
             var allGuns = DefDatabase<ThingDef>.AllDefs;
-            allGuns = allGuns.Where(x => CanShoot(x));
+            allGuns = allGuns.Where(x => NotGrenade(x));
             foreach (var item in allGuns)
             {
+                if (item.defName == "Gun_Scattergun") continue;
                 item.comps ??= new();
                 item.weaponTags ??= new();
                 item.TryAddComp(new CompProperties_DynamicTraits());
@@ -46,29 +47,19 @@ namespace BorderlessCustomize
                 }
                 else if (dynamicTraits.supportParts.Any()) continue;
                 dynamicTraits.supportParts.AddRange(partDefs);
-                //item.weaponTags = item.weaponTags.Union(tags).ToList();
                 if (settings.IsAddRename) item.TryAddComp(new CompProperties_Renamable());
                 if (settings.IsAddColor) item.TryAddComp(new CompProperties_Colorable());
                 item.TryAddComp(new CompProperties_AbilityProvider());
             }
         }
 
-        private static bool CanShoot(ThingDef thing)
+        private static bool NotGrenade(ThingDef thing)
         {
             if (thing == null) return false;
             if (!thing.IsRangedWeapon) return false;
-            if (!(thing.Verbs is { })) return false;
-            foreach (var verb in thing.Verbs)
-            {
-                var name = verb.verbClass.Name;
-                // Vanilla and CE
-                if (name.StartsWith(typeof(Verb_Shoot).Name)) return true;
-                // Milira
-                if (name.StartsWith("Verb_ChargeShoot")) return true;
-                // Moelotl
-                if (name.StartsWith("Verb_LotlQi")) return true;
-            }
-            return false;
+            //if (thing.thingCategories.Any(x => x.defName == "Grenades")) return false;
+            if (grenadeDef.ContainedInThisOrDescendant(thing)) return false;
+            return true;
         }
     }
 }
