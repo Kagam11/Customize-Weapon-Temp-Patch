@@ -1,5 +1,6 @@
 ﻿using CWF;
 using System.Linq;
+using Unity.Collections;
 using Verse;
 
 namespace BorderlessCustomize
@@ -31,12 +32,19 @@ namespace BorderlessCustomize
                 }
             }
 
+            var blacklist = new[]
+            {
+                "Gun_Scattergun",
+                "RA_SpadesShotgun",
+                "RA_DiamondsCrossbow",
+                "RA_HeartsRifle",
+            };
 
             var allGuns = DefDatabase<ThingDef>.AllDefs;
             allGuns = allGuns.Where(x => NotGrenade(x));
             foreach (var item in allGuns)
             {
-                if (item.defName == "Gun_Scattergun") continue;
+                if (blacklist.Contains(item.defName)) continue;
                 item.comps ??= new();
                 item.weaponTags ??= new();
                 item.TryAddComp(new CompProperties_DynamicTraits());
